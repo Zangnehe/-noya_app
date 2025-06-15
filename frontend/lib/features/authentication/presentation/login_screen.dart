@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'register_screen.dart';
-import 'forgot_password_screen.dart';
+import 'package:frontend/core/providers/auth_provider.dart';
+import 'package:frontend/core/services/auth/google_service.dart';
+import 'package:frontend/features/authentication/presentation/register_screen.dart';
+import 'package:frontend/features/authentication/presentation/forgot_password_screen.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -21,13 +24,36 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  String? _validateUsername(String? value) {
+  // Validate email
+  String? _validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Tên đăng nhập không được để trống';
+      return 'Vui lòng nhập email';
     }
-    if (!RegExp(r'^[a-zA-Z0-9]+$').hasMatch(value)) {
-      return 'Tên đăng nhập không hợp lệ (không chứa ký tự đặc biệt)';
+    void checkLoginStatus() {
+      final authProvider =
+          Provider.of<AuthProvider>(context, listen: false); // Lấy authProvider
+      authProvider.loadUser().then((_) {
+        if (authProvider.currentUser != null) {
+          Navigator.pushReplacementNamed(context, '/');
+        }
+      });
     }
+
+    void initState() {
+      super.initState();
+      checkLoginStatus();
+    }
+
+    final RegExp emailRegex =
+        RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+    if (!emailRegex.hasMatch(value)) {
+      return 'Vui lòng nhập email hợp lệ';
+    }
+
+    if (value.length < 5) {
+      return 'Email phải có ít nhất 5 ký tự';
+    }
+
     return null;
   }
 
@@ -39,15 +65,6 @@ class _LoginPageState extends State<LoginPage> {
       return 'Mật khẩu phải từ 6 đến 32 ký tự';
     }
     return null;
-  }
-
-  void _submit() {
-    if (_formKey.currentState!.validate()) {
-      _showDialog('Đăng nhập thành công', Colors.white);
-    } else {
-      _showDialog(
-          'Vui lòng điền đầy đủ thông tin và kiểm tra lại', Colors.white);
-    }
   }
 
   void _showDialog(String message, Color color) {
@@ -117,10 +134,19 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                        _showDialog(
-                            'Đăng nhập Google thành công', Colors.white);
+                      onPressed: () async {
+                        try {
+                          final account =
+                              await GoogleSignInService().signInWithGoogle();
+                          if (account != null) {
+                            print("User logged in: ${account}");
+                          }
+                          // Navigator.of(context).pop();
+                          // _showDialog(
+                          //     'Đăng nhập Google thành công', Colors.white);
+                        } catch (e) {
+                          print("Lỗi đăng nhập: $e");
+                        }
                       },
                       child: const Text(
                         'Tiếp tục',
@@ -135,6 +161,31 @@ class _LoginPageState extends State<LoginPage> {
         );
       },
     );
+  }
+
+  void _submit() async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        await Provider.of<AuthProvider>(context, listen: false)
+            .login(_usernameController.text, _passwordController.text);
+        // Xóa dữ liệu sau khi đăng nhập thành công
+        _usernameController.clear();
+        _passwordController.clear();
+
+        _showDialog('Đăng nhập thành công', Colors.white);
+
+        // Điều hướng tới trang chủ sau khi đăng nhập thành công
+        if (Provider.of<AuthProvider>(context, listen: false).currentUser !=
+            null) {
+          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+        } else {
+          _showDialog(
+              'Vui lòng điền đầy đủ thông tin và kiểm tra lại', Colors.white);
+        }
+      } catch (e) {
+        _showDialog('Đăng nhập thất bại', Colors.red);
+      }
+    }
   }
 
   @override
@@ -154,12 +205,6 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
       ),
       backgroundColor: Colors.white,
       body: Center(
@@ -174,7 +219,7 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                 ),
-                child: Image.asset('assets/Logo_doria.jpg', fit: BoxFit.cover),
+                child: Image.asset('assets/Logo_doria.png', fit: BoxFit.cover),
               ),
               const SizedBox(height: 15),
               ElevatedButton.icon(
@@ -205,9 +250,9 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     TextFormField(
                       controller: _usernameController,
-                      validator: _validateUsername,
+                      validator: _validateEmail,
                       decoration: InputDecoration(
-                        hintText: 'Tên đăng nhập',
+                        hintText: 'Email',
                         filled: true,
                         fillColor: Colors.grey[200],
                         border: OutlineInputBorder(
@@ -236,12 +281,9 @@ class _LoginPageState extends State<LoginPage> {
                       alignment: Alignment.centerRight,
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushNamed(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  ForgotPasswordPage(), // Điều hướng đến trang ForgotPasswordPage
-                            ),
+                            '/forgot-password',
                           );
                         },
                         child: const Text(
@@ -269,12 +311,13 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 20),
                     TextButton(
                       onPressed: () {
-                        // Điều hướng sang trang đăng ký
+                        // Navigator.pushNamed(
+                        //   context,
+                        //   '/register',
+                        // );
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => const RegisterPage(),
-                          ),
+                         MaterialPageRoute(builder: (context)=>RegisterPage())
                         );
                       },
                       child: const Text(

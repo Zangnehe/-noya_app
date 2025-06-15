@@ -30,6 +30,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  carousel_slider: ^5.1.1 
+  http: ^0.13.6
+  provider: ^6.1.2
+  shared_preferences: ^2.2.2 
+  firebase_auth: ^4.17.4
+  dart_jsonwebtoken: ^2.8.2 
+  google_sign_in: ^6.2.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -86,3 +93,28 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+  assets:
+    - assets/Logo_doria.png
+    - assets/Skinqua.png
+    - assets/skin.png
+    - assets/SkinUV.png
+    - assets/logo_den.jpg
+    - assets/banner1.jpg
+    - assets/banner2.jpg
+    - assets/banner3.jpg
+    - assets/banner4.jpg
+    - assets/3ce.jpg
+    - assets/cocon.jpg
+    - assets/daugoi.jpg
+    - assets/ddvs.jpg
+    - assets/duongtoc.jpg
+    - assets/kcn.jpg
+    - assets/kdr.jpg
+    - assets/mat.jpg
+    - assets/matna.jpg
+    - assets/nuochoa.jpg
+    - assets/srm.jpg
+    - assets/suatam.jpg
+    - assets/taytrang.jpg
+    - assets/TD_mat.jpg
+    - assets/khumui.jpg
