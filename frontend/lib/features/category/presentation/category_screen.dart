@@ -108,11 +108,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     categories[index]['name'] ?? 'N/A',
                     style: TextStyle(
                       fontSize: selectedIndex == index ? 18 : 14,
-                      color: selectedIndex == index ? Colors.blue : Colors.black,
+                      color: selectedIndex == index ? Color.fromARGB(255, 210, 180, 140) : Colors.black,
                     ),
                   ),
                   selected: selectedIndex == index,
-                  selectedTileColor: Colors.blue.shade100,
+                  selectedTileColor: Color.fromARGB(255, 210, 180, 140),
                   onTap: () {
                     setState(() {
                       selectedIndex = index;

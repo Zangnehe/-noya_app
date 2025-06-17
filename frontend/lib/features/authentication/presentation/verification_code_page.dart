@@ -16,7 +16,7 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         title: const Center(
             child: Text(
           'Nhập Mã Xác Nhận',
@@ -63,7 +63,7 @@ class _VerificationCodePageState extends State<VerificationCodePage> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Color.fromARGB(255, 210, 180, 140),
                     padding: const EdgeInsets.symmetric(
                         vertical: 12, horizontal: 20),
                     shape: RoundedRectangleBorder(

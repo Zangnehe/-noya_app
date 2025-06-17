@@ -73,7 +73,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       appBar: AppBar(
         title: Text('Đổi mật khẩu'),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         foregroundColor: Colors.white,
       ),
       body: Padding(
@@ -100,7 +100,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               onPressed: () => _changePassword(),
               child: Text('Cập nhật'),
               style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue,
+              backgroundColor: Color.fromARGB(255, 210, 180, 140),
                 foregroundColor: Colors.white
               ),
             ),

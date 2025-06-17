@@ -78,14 +78,14 @@ class _AccountScreenState extends State<AccountScreen> {
             fillColor: Colors.grey[300],
           ),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              color: Colors.blue,
+              color: Color.fromARGB(255, 210, 180, 140),
               padding: const EdgeInsets.all(16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -349,7 +349,7 @@ class _AccountScreenState extends State<AccountScreen> {
                               _isSwitched = value;
                             });
                           },
-                          activeColor: Colors.blue,
+                          activeColor: Color.fromARGB(255, 210, 180, 140),
                           inactiveThumbColor: Colors.grey,
                         ),
                         Row(

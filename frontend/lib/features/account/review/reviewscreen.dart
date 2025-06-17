@@ -39,7 +39,7 @@ class _ReviewScreenState extends State<ReviewScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         foregroundColor: Colors.white,
         centerTitle: true,
         title: Text(

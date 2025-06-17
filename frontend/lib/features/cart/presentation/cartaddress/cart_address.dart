@@ -60,7 +60,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: Color.fromARGB(255, 210, 180, 140),
                   ),
                 ),
               ),
@@ -76,7 +76,7 @@ class _AddressScreenState extends State<AddressScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Địa chỉ nhận hàng'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -254,7 +254,7 @@ class _AddressScreenState extends State<AddressScreen> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Color.fromARGB(255, 210, 180, 140),
                     padding: EdgeInsets.symmetric(vertical: 16),
                   ),
                   child: Text(

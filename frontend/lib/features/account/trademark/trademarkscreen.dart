@@ -50,7 +50,7 @@ class _BrandScreenState extends State<BrandScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Thương Hiệu'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         centerTitle: true,
       ),
       body: Column(
@@ -131,7 +131,7 @@ class _BrandScreenState extends State<BrandScreen> {
                 },
                 child: Text(letter),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue, // Màu sắc cho nút
+                  backgroundColor: Color.fromARGB(255, 210, 180, 140), // Màu sắc cho nút
                   foregroundColor: Colors.white, // Màu chữ
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12), // Kích thước nút lớn hơn
                   textStyle: TextStyle(

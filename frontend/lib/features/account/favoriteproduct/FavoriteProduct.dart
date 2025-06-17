@@ -21,7 +21,7 @@ class FavoriteProductScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Sản phẩm yêu thích"),
-          backgroundColor: Colors.blue,
+          backgroundColor: Color.fromARGB(255, 210, 180, 140),
           foregroundColor: Colors.white,
           centerTitle: true,
       ),

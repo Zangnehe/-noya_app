@@ -65,7 +65,7 @@ class _MyAppState extends State<MyApp> {
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
-          selectedItemColor: Colors.blue,
+          selectedItemColor: Color.fromARGB(255, 210, 180, 140),
           unselectedItemColor: Colors.black54,
           items: const [
             BottomNavigationBarItem(
@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp> {
               label: 'Trang chủ',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.category),
+              icon: Icon(Icons.grid_view),
               label: 'Danh mục',
             ),
             BottomNavigationBarItem(

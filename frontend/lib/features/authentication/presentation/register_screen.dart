@@ -130,7 +130,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 onPressed: () => Navigator.pop(context),
                 child: const Text(
                   'Xong',
-                  style: TextStyle(color: Colors.blue, fontSize: 16),
+                  style: TextStyle(color: Color.fromARGB(255, 210, 180, 140), fontSize: 16),
                 ),
               ),
             ],
@@ -310,7 +310,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         title: const Text(
           'Đăng ký',
           style: TextStyle(
@@ -443,7 +443,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     _acceptPromotions = value;
                   });
                 },
-                activeColor: Colors.blue,
+                activeColor: Color.fromARGB(255, 210, 180, 140),
                 title: const Text('Nhận khuyến mãi qua email'),
               ),
               const SizedBox(height: 10),
@@ -466,7 +466,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           TextSpan(
                             text: 'Điều khoản dịch vụ',
                             style: TextStyle(
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 210, 180, 140),
                               decoration: TextDecoration.underline,
                             ),
                           ),
@@ -474,7 +474,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           TextSpan(
                             text: 'Chính sách bảo mật',
                             style: TextStyle(
-                              color: Colors.blue,
+                              color: Color.fromARGB(255, 210, 180, 140),
                               decoration: TextDecoration.underline,
                             ),
                           ),
@@ -490,7 +490,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: ElevatedButton(
                   onPressed: _register,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Color.fromARGB(255, 210, 180, 140),
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -515,7 +515,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                   child: const Text(
                     'Đã có tài khoản? Đăng nhập.',
-                    style: TextStyle(color: Colors.blue, fontSize: 16),
+                    style: TextStyle(color: Color.fromARGB(255, 210, 180, 140), fontSize: 16),
                   ),
                 ),
               ),

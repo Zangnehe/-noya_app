@@ -32,7 +32,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(60.0), // Đặt chiều cao cho AppBar
           child: AppBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Color.fromARGB(255, 210, 180, 140),
             automaticallyImplyLeading: false, // Tắt icon back
             title: Center(
               child: Text(
@@ -49,14 +49,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
         body: Column(
           children: [
             TabBar(
-              indicatorColor: Colors.blue,
+              indicatorColor: Color.fromARGB(255, 210, 180, 140),
               indicatorWeight: 3.0,
               tabs: [
                 Tab(
                   child: Text(
                     'Khuyến mãi',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: Color.fromARGB(255, 210, 180, 140),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -65,7 +65,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   child: Text(
                     'Của bạn',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: Color.fromARGB(255, 210, 180, 140),
                       fontWeight: FontWeight.bold,
                     ),
                   ),

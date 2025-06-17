@@ -50,7 +50,7 @@ class _DonHangScreenState extends State<OrderScreen> with SingleTickerProviderSt
     AppBar _buildAppBar() {
       return AppBar(
         title: Text('Đơn hàng'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         foregroundColor: Colors.white,
         centerTitle: true,
       );
@@ -242,7 +242,7 @@ class _DonHangScreenState extends State<OrderScreen> with SingleTickerProviderSt
               },
               child: Text('Tiếp tục mua sắm'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Color.fromARGB(255, 210, 180, 140),
                 foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
               ),
@@ -316,7 +316,7 @@ class _DonHangScreenState extends State<OrderScreen> with SingleTickerProviderSt
               },
               child: Text('Tiếp tục mua sắm'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Color.fromARGB(255, 210, 180, 140),
                 foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
               ),
@@ -390,7 +390,7 @@ class _DonHangScreenState extends State<OrderScreen> with SingleTickerProviderSt
               },
               child: Text('Tiếp tục mua sắm'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Color.fromARGB(255, 210, 180, 140),
                 foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
               ),
@@ -463,7 +463,7 @@ class _DonHangScreenState extends State<OrderScreen> with SingleTickerProviderSt
               },
               child: Text('Khám phá các sản phẩm khác'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                backgroundColor: Color.fromARGB(255, 210, 180, 140),
                 foregroundColor: Colors.white,
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
               ),

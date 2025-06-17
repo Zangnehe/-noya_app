@@ -324,7 +324,7 @@ class _LocationSelectionScreen extends State<LocationSelectionScreen> {
       appBar: AppBar(
         title: Text('Chọn khu vực của bạn'),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         foregroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(Icons.arrow_back), // Icon quay lại
@@ -467,7 +467,7 @@ class _LocationSelectionScreen extends State<LocationSelectionScreen> {
                   });
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Color.fromARGB(255, 210, 180, 140),
                   padding:
                   const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                 ),

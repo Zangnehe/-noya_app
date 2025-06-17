@@ -45,7 +45,7 @@ class _CartScreenState extends State<CartScreen> {
       appBar: AppBar(
         title: Text('Giỏ hàng'),
         foregroundColor: Colors.white,
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         centerTitle: true,
       ),
       body: Column(
@@ -123,7 +123,7 @@ class _CartScreenState extends State<CartScreen> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: quantities.isEmpty
                         ? Colors.grey // Set a disabled color for the button
-                        : Colors.orange,
+                        : const Color.fromARGB(200, 186, 110, 83),
                     padding: EdgeInsets.symmetric(vertical: 16.0),
                   ),
                   child: Text(

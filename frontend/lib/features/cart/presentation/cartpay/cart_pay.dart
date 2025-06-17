@@ -13,7 +13,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Chọn hình thức thanh toán'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -41,7 +41,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
           RadioListTile<String>(
             title: Row(
               children: [
-                Icon(Icons.credit_card, color: Colors.blue), // Icon for Credit Card
+                Icon(Icons.credit_card, color: Color.fromARGB(255, 210, 180, 140)), // Icon for Credit Card
                 SizedBox(width: 8),
                 Text('Thanh toán bằng thẻ tín dụng'),
               ],
@@ -65,7 +65,7 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
                   Navigator.pop(context, _selectedPaymentMethod);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Color.fromARGB(255, 210, 180, 140),
                   padding: EdgeInsets.symmetric(vertical: 16),
                 ),
                 child: Text(

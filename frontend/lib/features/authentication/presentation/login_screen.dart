@@ -130,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       child: const Text(
                         'Hủy',
-                        style: TextStyle(color: Colors.blue, fontSize: 16),
+                        style: TextStyle(color: Color.fromARGB(255, 210, 180, 140), fontSize: 16),
                       ),
                     ),
                     TextButton(
@@ -150,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       child: const Text(
                         'Tiếp tục',
-                        style: TextStyle(color: Colors.blue, fontSize: 16),
+                        style: TextStyle(color: Color.fromARGB(255, 210, 180, 140), fontSize: 16),
                       ),
                     ),
                   ],
@@ -194,7 +194,7 @@ class _LoginPageState extends State<LoginPage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         title: const Center(
           child: Text(
             'Đăng Nhập',
@@ -288,7 +288,7 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         child: const Text(
                           'Quên mật khẩu?',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: Color.fromARGB(255, 210, 180, 140)),
                         ),
                       ),
                     ),
@@ -296,7 +296,7 @@ class _LoginPageState extends State<LoginPage> {
                     ElevatedButton(
                       onPressed: _submit,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Color.fromARGB(255, 210, 180, 140),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 100, vertical: 15),
                         shape: RoundedRectangleBorder(
@@ -322,7 +322,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       child: const Text(
                         'Bạn chưa có tài khoản đăng nhập? Đăng ký',
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Color.fromARGB(255, 210, 180, 140)),
                       ),
                     ),
                   ],

@@ -8,7 +8,7 @@ class OrderDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Thông tin đơn hàng'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -40,7 +40,7 @@ class OrderDetailsScreen extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Colors.blue[100],
+        color: Color.fromARGB(255, 210, 180, 140),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(

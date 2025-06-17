@@ -44,7 +44,7 @@ class _OrderConfirmationScreenState extends State<OrderConfirmationScreen> {
                           padding:
                               EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                           decoration: BoxDecoration(
-                            color: Colors.blue[100],
+                            color: Color.fromARGB(255, 210, 180, 140),
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(

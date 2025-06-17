@@ -55,7 +55,7 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
                 onPressed: () => Navigator.pop(context),
                 child: const Text(
                   'Xong',
-                  style: TextStyle(color: Colors.blue, fontSize: 16),
+                  style: TextStyle(color: Color.fromARGB(255, 210, 180, 140), fontSize: 16),
                 ),
               ),
             ],
@@ -141,7 +141,7 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Thông tin tài khoản'),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -219,7 +219,7 @@ class _AccountInfoScreenState extends State<AccountInfoScreen> {
               child: ElevatedButton(
                 onPressed: _updateAccountInfo,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Color.fromARGB(255, 210, 180, 140),
                   padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                 ),
                 child: const Text(
