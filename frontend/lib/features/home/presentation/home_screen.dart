@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 210, 180, 140),
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: ClipOval(
               child: Image.asset(
-                'assets/logo_doria.jpg',
+                'assets/logo_N_den.jpg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -146,13 +146,13 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.shopping_bag),
+            icon: Icon(Icons.inventory_2),
             onPressed: () {},
           ),
         ],
       ),
       body: Container(
-        color: Colors.blue,
+        color: Color.fromARGB(255, 210, 180, 140),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 120.0,
                   autoPlay: true,
                   enlargeCenterPage: true,
-                  viewportFraction: 0.9,
+                  viewportFraction: 0.95,
                   aspectRatio: 16 / 9,
                   autoPlayInterval: Duration(seconds: 3),
                 ),
@@ -170,9 +170,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        margin: const EdgeInsets.symmetric(horizontal: 2.0),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
+                          borderRadius: BorderRadius.circular(15.0),
                           image: DecorationImage(
                             image: AssetImage(imagePath),
                             fit: BoxFit.cover,
@@ -185,25 +185,22 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               // Mở đầu
               Padding(
-                padding: const EdgeInsets.only(right: 16.0, top: 16.0),
+                padding: const EdgeInsets.only(top: 10.0, bottom: 10),
                 child: GridView.count(
                   shrinkWrap: true,
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 50,
-                  mainAxisSpacing: 2,
+                  crossAxisCount: 4,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 16,
                   physics: NeverScrollableScrollPhysics(),
                   children: [
-                    _buildCategoryItem(
-                        'Danh mục', Colors.green, Icons.category),
-                    _buildCategoryItem('Cẩm nang', Colors.purple, Icons.book),
-                    _buildCategoryItem(
-                        'Hàng mới về', Colors.orange, Icons.new_releases),
-                    _buildCategoryItem(
-                        'Tra cứu hàng hóa', Colors.yellow, Icons.search),
-                    _buildCategoryItem('Nước Hoa Chính Hãng',
-                        const Color.fromARGB(255, 66, 120, 214), Icons.spa),
-                    _buildCategoryItem(
-                        'Khuyến mãi', Colors.pink, Icons.local_offer),
+                    _buildCategoryItem('Danh Mục', Color.fromARGB(255, 32, 121, 63), Color(0xFFB6E2C9), Icons.grid_view),
+                    _buildCategoryItem('Hàng Mới', Color.fromARGB(255, 143, 82, 186), Color(0xFFEEDCFB), Icons.fiber_new_outlined),
+                    _buildCategoryItem('Đánh Giá', Color.fromARGB(255, 190, 135, 98), Color(0xFFFFE9D6), Icons.star),
+                    _buildCategoryItem('Kiểm Tra Loại Da', Color.fromARGB(255, 31, 96, 143), Color.fromARGB(255, 148, 169, 185), Icons.spa),
+                    _buildCategoryItem('Hỗ Trợ', Color.fromARGB(255, 222, 109, 109), Color(0xFFFFF1F1), Icons.support_agent),
+                    _buildCategoryItem('Cẩm Nang', Color.fromARGB(255, 196, 204, 110), Color(0xFFF5F8D0), Icons.auto_stories),
+                    _buildCategoryItem('Khuyến Mãi', Color.fromARGB(255, 70, 140, 149), Color(0xFFD0F0F5), Icons.local_offer),
+                    _buildCategoryItem('Chat', Color.fromARGB(255, 83, 95, 174), Color(0xFFDDE1F2), Icons.chat),
                   ],
                 ),
               ),
@@ -220,7 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.blue),
+                          color: Color.fromARGB(255, 210, 180, 140)),
                     ),
                     SizedBox(height: 10),
                     SizedBox(
@@ -298,7 +295,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.blue),
+                          color: Color.fromARGB(255, 210, 180, 140)),
                     ),
                     SizedBox(height: 10),
                     SizedBox(
@@ -309,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         itemBuilder: (context, index) {
                           List<Map<String, String>> brandData = [
                             {
-                              'image': 'assets/cocon.jpg',
+                              'image': 'assets/logo.jpg',
                               'nameImage': 'assets/logo-cocoon.jpg'
                             },
                           ];
@@ -377,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.blue),
+                          color: Color.fromARGB(255, 210, 180, 140)),
                     ),
                     SizedBox(height: 10),
                     SizedBox(
@@ -483,21 +480,25 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildCategoryItem(String title, Color color, IconData icon) {
+  Widget _buildCategoryItem(String title, Color startColor, Color endColor, IconData icon) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         // Icon trong item
         Container(
-          width: 50.0,
-          height: 50.0,
+          width: 55.0,
+          height:55.0,
           decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(16.0),
+           gradient: LinearGradient(
+            colors: [startColor, endColor],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomLeft,
+            ),
+            borderRadius: BorderRadius.circular(25),
           ),
           child: Icon(
             icon,
-            color: Colors.white,
+            color: const Color.fromARGB(119, 0, 0, 0),
             size: 30.0,
           ),
         ),

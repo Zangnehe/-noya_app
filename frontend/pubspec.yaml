@@ -103,7 +103,6 @@ flutter:
     - assets/banner2.jpg
     - assets/banner3.jpg
     - assets/banner4.jpg
-    - assets/3ce.jpg
     - assets/cocon.jpg
     - assets/daugoi.jpg
     - assets/ddvs.jpg
@@ -118,3 +117,6 @@ flutter:
     - assets/taytrang.jpg
     - assets/TD_mat.jpg
     - assets/khumui.jpg
+    - assets/logo.jpg
+    - assets/logo_N_trang.jpg
+    - assets/logo_N_den.jpg
